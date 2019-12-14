@@ -1,0 +1,150 @@
+import java.util.Scanner;
+
+public class level {
+    public static void main(String[] args) {
+//      英尺和米的类型转换，例如姚明高2.26米，请在控制台输出其身高多少英尺
+        Scanner in=new Scanner(System.in);
+        double k=3.28;
+        double i=0;
+        System.out.print("请输入该人身高（m)");
+        i=in.nextDouble();
+        System.out.print("该人身高为"+k*i+"(英尺）");
+
+    }
+
+
+
+
+}
+import java.util.Scanner;
+
+public class level2 {
+    public static void main(String[] args) {
+//      写一个判断一个数是否是素数的判断语句，若是素数，打印该素数。若不是，打印"不是素数"四个字
+        Scanner in=new Scanner(System.in);
+        int i,x;
+        int k=0;
+        System.out.print("请输入一个整数");
+        x=in.nextInt();
+        if(x>=2){
+            for(i=2;i<x;i++){
+                if(x%i==0){
+                    k=1;
+                    break;
+                }
+
+            }if(k==1){
+                System.out.println("不是素数!");
+            }else{
+                System.out.println(x+"是素数!");
+            }
+
+        }else{
+            System.out.println("该数不是素数!");
+        }
+    }
+}
+import java.util.Scanner;
+
+public class level3 {
+    public static void main(String[] args) {
+//      利用方法凑硬币，用1元，2元，5元凑任意整数金额
+        Scanner in=new Scanner(System.in);
+         int i,j,k,m;
+         int sum=0;
+         System.out.print("请输入一个整数：");
+         sum=in.nextInt();
+         for(i=1;i<sum;i++){
+             for(j=1;j<sum/2;j++){
+                 for(k=1;k<sum/5;k++){
+                    m=i+2*j+5*k;
+                    if(m==sum){
+                        System.out.println(sum+"="+i+"+"+j+"*2"+"+"+k+"*5");
+                    }
+                 }
+             }
+         }
+    }
+}
+import java.util.Scanner;
+
+public class level5 {
+    public static void main(String[] args) {
+//      用0.1元，0.2元，0.5元凑任意小数金额打印出所有结果
+        System.out.print("请输入要一个数：");
+        Scanner in=new Scanner(System.in);
+        double i,j,k,a;
+        double sum=0;
+        sum=in.nextDouble();
+        for(i=1;i<sum/0.1;i++){
+            for(j=1;j<sum/0.2;j++){
+                for(k=1;k<sum/0.5;k++){
+                    a=0.1*i+0.2*j+0.5*k;
+                    if(a==sum){
+                        System.out.println(sum+"="+i+"*0.1"+"+"+j+"*0.2"+"+"+k+"*0.5");
+                    }
+                }
+            }
+        }
+    }
+}
+
+import java.util.Scanner;
+public class level52 {
+    //    创建输出九九乘法表的方法，使用二维数组，实现从数组中取出数字，主函数调用方法完成输出四种格式的九九乘法表\
+//    左上角:
+//        public static void main(String[] args) {
+//            Scanner in=new Scanner(System.in);
+//            int i,j;
+//            for(i=9;i>=1;i--){
+//                for(j=1;j<=i;j++){
+//                    System.out.print(j+"*"+i+"="+i*j+"\t");
+//                }
+//                System.out.print("\n");
+//            }
+//        }
+//    左下角:
+//        public static void main (String[]args){
+//            Scanner in = new Scanner(System.in);
+//            int i, j;
+//            for (i = 1; i<=9; i++) {
+//                for (j = 1; j <= i; j++) {
+//                    System.out.print(j + "*" + i + "=" + i * j + "\t");
+//                }
+//                System.out.print("\n");
+//            }
+//        }
+//    右上角:
+//    public static void main(String[] args) {
+//        for (int i = 9; i >= 1; i--) {
+//            for (int j= 9 - i; j > 0; j--) {
+//                System.out.print("       ");
+//            }
+//            for (int a = i; a >= 1; a--) {
+//                if ((i * a) >= 10) {
+//                    System.out.print(" " + a + "*" + "" + i + "=" + i * a);
+//                } else {
+//                    System.out.print(" " + a + "*" + "" + i + "=" + " " + i * a);
+//                }
+//            }
+//            System.out.println();
+//        }
+//        System.out.println();
+//    }
+//    右下角:
+//    public static void main(String[] args) {
+//        for (int i = 9; i >= 1; i--) {
+//            for (int j = i; j > 1; j--) {
+//                System.out.print("       ");
+//            }
+//            for (int h = i; h <= 9; h++) {
+//                if ((i * h) >= 10) {
+//                    System.out.print(" " + i + "*" + "" + h + "=" + i * h);
+//                } else {
+//                    System.out.print(" " + i + "*" + "" + h + "=" + " " + i * h);
+//                }
+//            }
+//            System.out.println();
+//        }
+//    }
+}

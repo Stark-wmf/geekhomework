@@ -1,0 +1,77 @@
+import java.util.Scanner;
+public class level1 {
+    public static void main(String[] args){
+        final double A=0.3048;
+        double b,c;
+        int x;
+        Scanner sc=new Scanner(System.in);
+        System.out.println("请选择转换类型");
+        x=sc.nextInt();
+        if(x==1){ //x=1,表示英尺转米
+            System.out.print("请输入英尺数：");
+            b=sc.nextDouble();
+            c=A*b;
+            System.out.println("对应于"+c+"米");
+        }
+        else if(x==2){ //x=2表示 米转英尺
+            System.out.print("请输入米数：");
+            b=sc.nextDouble();
+            c=1/0.3048*b;
+            System.out.printf("对应于%.1f英寸",c);
+        }
+    }
+}
+import java.util.Scanner;
+
+//判断输入的数是不是素数
+public class level2 {
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+        System.out.println("输入判断的数");
+        int a = s.nextInt();
+        for(int i=2 ; i<=a;i++){    //最小的素数是2
+            if(a % i == 0&& i != a){   //除了1和本身之后没有约数即为素数
+                System.out.println("不是素数");
+                break;
+            }else if(i == a){
+
+                System.out.println("是素数");
+
+            }
+        }
+    }
+}
+import java.util.Scanner;
+
+
+
+public class level3 {
+
+    public static void main(String[] args) {
+
+        Scanner Sc = new Scanner(System.in);
+
+        int m;
+
+
+        m = Sc.nextInt();
+
+        for (int a = 0; a <= (m/1); a++) {
+
+            for (int b = 0; b <= (m/2); b++) {
+
+                for (int c = 0; c <= (m/5); c++) {
+                    if (1 * a + 2 * b + 5 * c == m) {
+
+                        System.out.printf("一元钱数量：%s,二元钱数量：%s，五元钱数量：%s\n", a, b, c);
+
+                    }
+                }
+
+            }
+
+        }
+
+    }
+
+}

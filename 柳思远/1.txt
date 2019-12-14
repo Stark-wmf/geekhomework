@@ -1,0 +1,56 @@
+import java.util.*;
+public class turn {
+//    直白明了的进行米转英尺的换算
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("请输入一个数字");
+        double a = sc.nextDouble();
+        double b;
+        b = a*3.28;
+        System.out.println(b);
+    }
+}
+作业二
+import java.util.Scanner;
+
+public class homework2 {
+//    利用for循环不停对输入数字求余，若结果均为yes即无法被整除，则说明为素数
+    public static void main(String[] args){
+        Scanner in = new Scanner(System.in);
+        System.out.println("请输入一个数字");
+        int a = in.nextInt();
+        for(int i=2; i<a; i++){
+            if(a%i == 0){
+                System.out.println("no");
+            }else{
+                System.out.println("yes");
+            }
+        }
+
+    }
+}
+作业三
+import java.util.Scanner;
+
+public class homework3 {
+    public static void main(String[] args){
+        Scanner in = new Scanner(System.in);
+        int a = 5, b = 2, c = 1;
+        System.out.println("请输入一个数字");
+        int z = in.nextInt();
+        int ff = 0;
+        for(int five = 0;five<=z/5;five++){
+
+            for(int two = 0;two<=z/2;two++){
+
+                for(int one = 0;one<=z;one++){
+                    if(one+two*2+five*5==z){
+                        ff++;
+                        System.out.println("五元"+five+"张，二元"+two+"张，一元"+one+"张");
+                    }
+                }
+            }
+        }
+        System.out.println("共有"+ff+"种");
+    }
+}
