@@ -1,0 +1,23 @@
+1.序列化操作的时候系统会把当前类的serialVersionUID写入到序列化文
+件中，当反序列化时系统会去检测文件中的serialVersionUID，判断它是否
+与当前类的serialVersionUID一致，如果一致就说明序列化类的版本与当
+前类版本是一样的，可以反序列化成功，否则失败。
+
+由更改ObjectOuSt中的Student的serialVersionUID值检验即可，若不同会出现异常
+
+2.Student 继承 Person，Student实现Serializable接口，序列化Student时
+不需要Person也实现Serializable接口.
+
+这样做虽然对Student没影响，但如果父类不实现的话的，就需要有默认的无参的构造函数。
+在父类没有实现 Serializable 接口时，虚拟机是不会序列化父对象的，而一个 Java
+对象的构造必须先有父对象，才有子对象，反序列化也不例外。所以反序列化时，为了构
+造父对象，只能调用父类的无参构造函数作为默认的父对象。因此当我们取父对象的变量值
+时，它的值是调用父类无参构造函数后的值。如果你考虑到这种序列化的情况，在父类无参
+构造函数中对变量进行初始化，否则的话，父类变量值都是默认声明的值，如 int 型的默
+认是 0，string 型的默认是 null。
+
+3.Student 对象中有一个引用属性 Address（一个对象），
+序列化Student时需要Address也实现Serializable接口。
+
+可通过更改ObjectOuSt中Adress类，不实现
+Serializable接口会出现异常。
